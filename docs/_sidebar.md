@@ -1,2 +1,2 @@
 - [Home](README.md)
-- [Guide](guide.md)
+- [Architecture of github actions](Architecture_of_github_actions.md)
