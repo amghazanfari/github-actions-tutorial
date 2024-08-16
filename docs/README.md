@@ -102,6 +102,10 @@ If you exceed the included minutes, the following rates apply:
 - **12-vCPU**: $0.12 USD per minute
 - **6-vCPU (M1)**: $0.16 USD per minute
 
+### Self-Hosted Runners
+
+Self-hosted runners allow you to run workflows on your own infrastructure. They offer flexibility and control over the hardware and operating system environments. Importantly, self-hosted runners do not incur additional costs based on usage, as they utilize your own resources. This can be a cost-effective solution for teams with specific needs or high usage requirements.
+
 ### Storage Costs
 
 Additional storage beyond the included amount is charged at $0.25 USD per GB. Data transfer out, outside of Actions, costs $0.50 USD per GB.
