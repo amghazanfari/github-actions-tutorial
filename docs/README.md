@@ -1,13 +1,5 @@
 # github-actions-tutorial
 
-## An introduction to github actions
-
-GitHub Actions is a dynamic continuous integration and continuous delivery (CI/CD) platform that empowers developers to automate their build, test, and deployment processes directly within GitHub. By leveraging GitHub Actions, developers can create workflows that respond to various events in their repositories, such as code pushes, pull requests, or issue creations, thereby streamlining the software development lifecycle.
-
-At its core, GitHub Actions allows for the automation of tasks through workflows defined in YAML files. These workflows consist of jobs and steps that can include running scripts, executing tests, and deploying code. The platform supports a wide range of programming languages and environments, providing flexibility and scalability for diverse development needs.
-
-One of the standout features of GitHub Actions is its integration with the GitHub ecosystem, which facilitates seamless automation triggered by repository events. This integration not only enhances productivity but also ensures that code quality and deployment processes are consistently maintained across projects. With GitHub Actions, developers can focus more on innovation and less on the repetitive aspects of software development, making it an invaluable tool in modern DevOps practices.
-
 ## What is CI/CD
 
 CI/CD, which stands for Continuous Integration and Continuous Delivery (or Deployment), is a set of practices and tools in software development that aim to automate and streamline the process of integrating code changes and delivering them to production environments. This approach is central to modern DevOps practices, facilitating faster and more reliable software delivery.
@@ -62,3 +54,65 @@ Today, CI/CD is an integral part of DevOps, with a plethora of tools available t
 - **CircleCI**: Offers cloud-based CI/CD services with a focus on speed and ease of use, supporting a wide range of languages and environments.
 - **Travis CI**: Known for its simplicity, Travis CI is popular among open-source projects for its straightforward configuration and integration with GitHub.
 - **Github Actions**: Last but not least, the tool that we learning through this book. :-)
+
+## An introduction to github actions
+
+GitHub Actions is a dynamic continuous integration and continuous delivery (CI/CD) platform that empowers developers to automate their build, test, and deployment processes directly within GitHub. By leveraging GitHub Actions, developers can create workflows that respond to various events in their repositories, such as code pushes, pull requests, or issue creations, thereby streamlining the software development lifecycle.
+
+At its core, GitHub Actions allows for the automation of tasks through workflows defined in YAML files. These workflows consist of jobs and steps that can include running scripts, executing tests, and deploying code. The platform supports a wide range of programming languages and environments, providing flexibility and scalability for diverse development needs.
+
+One of the standout features of GitHub Actions is its integration with the GitHub ecosystem, which facilitates seamless automation triggered by repository events. This integration not only enhances productivity but also ensures that code quality and deployment processes are consistently maintained across projects. With GitHub Actions, developers can focus more on innovation and less on the repetitive aspects of software development, making it an invaluable tool in modern DevOps practices.
+
+## Pricing for GitHub Actions
+
+GitHub Actions provides a flexible pricing model that allows developers to automate their workflows with ease. The pricing structure is designed to accommodate various usage patterns, whether for public or private repositories.
+
+### Free Usage
+
+GitHub Actions is free for public repositories, allowing unlimited use of GitHub-hosted runners. This encourages open-source projects to leverage CI/CD capabilities without incurring additional costs.
+
+### Pricing for Private Repositories
+
+For private repositories, GitHub provides a certain amount of free minutes and storage based on the account's plan. Beyond these included amounts, additional usage incurs costs:
+
+- **GitHub Free**: Includes 2,000 minutes per month.
+- **GitHub Pro**: Includes 3,000 minutes per month.
+- **GitHub Team**: Includes 3,000 minutes per month.
+
+### Cost for Additional Minutes
+
+If you exceed the included minutes, the following rates apply:
+
+#### Linux Runners
+
+- **2-vCPU**: $0.008 USD per minute
+- **4-vCPU**: $0.016 USD per minute
+- **8-vCPU**: $0.032 USD per minute
+- **16-vCPU**: $0.064 USD per minute
+
+#### Windows Runners
+
+- **2-vCPU**: $0.016 USD per minute
+- **8-vCPU**: $0.064 USD per minute
+- **16-vCPU**: $0.128 USD per minute
+
+#### macOS Runners
+
+- **3-vCPU**: $0.08 USD per minute
+- **12-vCPU**: $0.12 USD per minute
+- **6-vCPU (M1)**: $0.16 USD per minute
+
+### Storage Costs
+
+Additional storage beyond the included amount is charged at $0.25 USD per GB. Data transfer out, outside of Actions, costs $0.50 USD per GB.
+
+### Billing and Spending Limits
+
+- Accounts have a default spending limit of 0 USD, preventing additional usage beyond the included amounts. This limit can be adjusted to allow for more usage.
+- Organizations can connect an Azure Subscription ID to manage and pay for usage beyond the included amounts.
+
+### Estimating Costs
+
+To estimate potential costs, GitHub provides a [Pricing Calculator](https://github.com/pricing/calculator) that allows users to configure and estimate expenses based on their specific usage patterns.
+
+By understanding the pricing structure, teams can effectively manage their budgets while leveraging the powerful automation capabilities of GitHub Actions.
