@@ -26,34 +26,41 @@ This process allows GitHub Actions to automate various tasks such as building, t
 
 ## first look at github actions
 
-now we are going to write our first workflow. for this one create a repository and in `.github/workflows/first_workflow.yaml` write these lines:
+now we are going to write our first workflow. we will create our first workflow using GitHub Actions. Follow these steps to get started:
 
-```yaml
-name: first workflow
+1. **Create a Repository**: Begin by creating a new repository on GitHub.
 
-on:
-  push:
+2. **Add a Workflow File**: In your repository, create a file at the path `.github/workflows/first_workflow.yaml` and add the following content:
 
-jobs:
-  hello-world:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello world
-        run: echo "hello world!"
-```
+   ```yaml
+   name: First Workflow
 
-after commit and pushing your code, go to Actions tab in your repository page. then you can see your action. after clicking on that you can see your action step by step
+   on:
+     push:
 
-![first workflow1](images/first-workflow1.png)
+   jobs:
+     hello-world:
+       runs-on: ubuntu-latest
 
-![first workflow2](images/first-workflow2.png)
+       steps:
+         - name: Hello World
+           run: echo "Hello, world!"
+   ```
 
-![first workflow3](images/first-workflow3.png)
+3. **Commit and Push**: After adding the workflow file, commit your changes and push them to the repository.
 
-congratulation! you write your first workflow. now let's see what you were writing.
+4. **View the Workflow**: Navigate to the "Actions" tab on your repository's GitHub page. You will see your workflow listed there. Click on it to view the execution steps.
 
-the first part is the name of workflow and in the second picture you can see it.
+   ![first workflow1](images/first-workflow1.png)
 
-the second part is saying in which event the workflow runs. there are many events in github actions, such as push, pull_request, issues, etc. you also can set to job starts manually.
+   ![first workflow2](images/first-workflow2.png)
 
-the third part is the jobs of workflow. each job contains one or more steps. and you must say it runs in which OS. your options are ubuntu, windows, and macos
+   ![first workflow3](images/first-workflow3.png)
+
+ongratulations! You've successfully created your first workflow. Now, let's break down what each part of the workflow does:
+
+**Workflow Name**: The first part specifies the name of the workflow, which is visible in the Actions tab (as shown in the second image).
+
+**Trigger Event**: The on section defines the event that triggers the workflow. In this example, the workflow runs on a push event. GitHub Actions supports various events such as push, pull_request, issues, and more. You can also configure workflows to start manually.
+
+**Jobs**: The jobs section defines the tasks to be executed. Each job consists of one or more steps and specifies the operating system on which it runs. Available options include Ubuntu, Windows, and macOS.
