@@ -13,8 +13,13 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"
+    />
   </head>
   <body>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
     <div id="app"></div>
     <script>
       window.$docsify = {
@@ -22,6 +27,7 @@
         repo: "",
         loadSidebar: true,
         subMaxLevel: 4,
+        plugins: [EditOnGithubPlugin.create(docBase, docEditBase, title)],
       };
     </script>
     <!-- Docsify v4 -->
