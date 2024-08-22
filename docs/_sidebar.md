@@ -1,2 +1,3 @@
-- [Home](README.md)
+- [Intro](README.md)
 - [Architecture of github actions](Architecture_of_github_actions.md)
+- [Better look at actions](Better_look_at_actions.md)

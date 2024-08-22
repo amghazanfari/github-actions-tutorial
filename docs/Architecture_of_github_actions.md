@@ -64,3 +64,89 @@ ongratulations! You've successfully created your first workflow. Now, let's brea
 **Trigger Event**: The on section defines the event that triggers the workflow. In this example, the workflow runs on a push event. GitHub Actions supports various events such as push, pull_request, issues, and more. You can also configure workflows to start manually.
 
 **Jobs**: The jobs section defines the tasks to be executed. Each job consists of one or more steps and specifies the operating system on which it runs. Available options include Ubuntu, Windows, and macOS.
+
+## multisteps jobs
+
+In GitHub Actions, a job is a set of steps that execute on the same runner. By breaking down your workflow into multiple steps within a job, you can create more organized, modular, and maintainable automation processes.
+
+### Key Benefits:
+
+**Modularity**: Each step can focus on a specific task, making the workflow easier to understand and maintain.
+
+**Reusability**: Steps can be reused across different jobs and workflows.
+
+**Error Handling**: If one step fails, subsequent steps can be skipped, allowing for better error management.
+
+**Visibility**: Multi-step jobs provide clearer logs and status updates for each part of the process.
+
+```yaml
+name: Checkout and list files
+
+on:
+  push:
+
+jobs:
+  checkout_and_list_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files before checkout
+        run: ls -l
+
+      - name: Checkout code
+        run: |
+          git clone https://github.com/${{ github.repository }}.git .
+          git checkout ${{ github.sha }}
+
+      - name: list files after checkout
+        run: ls -l
+```
+
+github actions does not get the source code by default, the reason is that github actions used for more than ci/cd. if you want the code you should fetch it first. soon we see better ways to get the codes using actions but for now you see three steps that runs sequentially in the first `ls` you don't see anything. then you fetch the code and now if you use `ls` you see the files
+
+![second-workflow](images/second-workflow.png)
+
+## What is an action
+
+An action is a reusable, self-contained unit of code that performs a specific task within a GitHub Actions workflow. Think of actions as building blocks that you can combine to create custom automation workflows for your projects.
+
+### Key Characteristics of Actions
+
+**Modularity:** Actions are designed to be modular, allowing you to break down complex processes into smaller, manageable components.
+
+**Reusability:** Once created, actions can be shared and reused across multiple workflows and projects.
+
+**Flexibility:** Actions can be written in JavaScript or packaged as Docker containers, providing flexibility in implementation.
+
+### Types of Actions
+
+**JavaScript Actions:** These run directly on the runner machine and are faster to execute.
+
+**Docker Container Actions:** These run in a Docker container, providing a consistent and isolated environment.
+
+**Composite Actions:** These combine multiple workflow steps within a single action.
+
+### Let's make it with actions
+
+in prevous code we write a workflow that fetch the code. now we can use it with actions. there is an action named `checkout` that use to checkout the code
+
+```yaml
+name: Checkout and list files
+
+on:
+  push:
+
+jobs:
+  checkout_and_list_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files before checkout
+        run: ls -l
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: list files after checkout
+        run: ls -l
+```
+
+![third-workflow](images/third-workflow.png)
