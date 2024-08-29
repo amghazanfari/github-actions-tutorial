@@ -107,6 +107,23 @@ This workflow can be triggered by sending a POST request to the GitHub API with:
 
 Remember that you can combine multiple event types in a single workflow file, allowing for flexible and powerful automation scenarios.
 
+## Workflow run
+
+Workflow run events trigger based on another workflow's condition
+
+```yaml
+on:
+  workflow_run:
+    workflows:
+      - other workflow
+    types:
+      - completed
+```
+
+in this example we say this workflow runs only if the workflow with name of `other workflow` is completed.
+
+remember you cannot chain together more than three levels of workflows using workflow_run
+
 ## Exercise
 
 ### Objective
@@ -140,6 +157,6 @@ Create a GitHub Actions workflow file that incorporates multiple trigger types f
 
 3. Add a job named "build" that runs on ubuntu-latest.
 
-## Bonus
+### Bonus
 
 Add a repository dispatch event trigger that listens for a custom event type named "deploy".
